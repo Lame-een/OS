@@ -1,0 +1,48 @@
+class Main
+{
+    function void main()
+    {
+        var int a, b, c, i;
+
+        /*
+        var Array A;
+
+        let A = Array.new(5);
+        let A[0] = 10;
+        let A[1] = 14;
+        let A[2] = 13;
+        let A[3] = 12;
+        let A[4] = 11;
+
+        do Output.printInt(A);
+        do Output.println();
+        do Output.printInt(A[0]);
+        
+        do Memory.memcpy(A, 6000, 5);
+        */
+        
+        let a = Memory.alloc(5);
+        let b = Memory.alloc(3);
+        let c = Memory.alloc(6);
+
+        do Memory.deAlloc(a);
+        do Memory.deAlloc(c);
+        do Memory.deAlloc(b);
+
+        do Memory.defrag();
+
+        let c = Memory.alloc(8);
+        do Output.printInt(c);
+        while (i < 8){
+            do Memory.poke(c + i, i);
+            let i = i + 1;
+        }
+
+        do Memory.deAlloc(c);
+
+        do Memory.defrag();
+
+        
+        return;
+    }
+}
