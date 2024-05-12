@@ -1,0 +1,10 @@
+class Main
+{
+    function void main()
+    {
+        do Output.printString("abcdef");
+        do Output.moveCursor(0,0);
+        do Output.printString("hhhhhhh");
+        return;
+    }
+}
